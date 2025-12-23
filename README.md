@@ -1,13 +1,13 @@
 # Instagram Post Verification Demo
 
-Verify Instagram post ownership using zkTLS with [Reclaim Protocol](https://reclaimprotocol.org/).
+Verify Instagram post using zkTLS with [Reclaim Protocol](https://reclaimprotocol.org/).
 
 ## Overview
 
 This demo application allows users to:
 
 1. **Fetch post owner** - Enter an Instagram post URL to extract the username using zkFetch
-2. **Verify ownership** - Prove you own the post through Reclaim's verification flow
+2. **Verify post data** - Prove you own the post through Reclaim's verification flow
 3. **View verified post** - Display the verified post in an Instagram-style embed
 
 ## Architecture
@@ -17,7 +17,7 @@ This demo application allows users to:
 │                        Frontend (React)                      │
 │  - User enters Instagram URL                                 │
 │  - zkFetch extracts username with ZK proof                   │
-│  - Reclaim JS SDK verifies post ownership                    │
+│  - Reclaim JS SDK verifies post                              │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -166,7 +166,7 @@ const data = await reclaim.zkFetch(url, {
 });
 ```
 
-### Step 2: Verify Ownership (JS SDK)
+### Step 2: Verify Post (JS SDK)
 
 After fetching the username, the user can verify they own the post:
 
